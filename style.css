@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  font-family: mathematic-elegance, Arial, sans-serif;
+  background: #000000;
+}
+.card {
+  width: min(100%, 900px);
+  border: 1px solid hsl(0, 0%, 99%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.topo,
+.destaque {
+  border-bottom: 1px solid #fcfafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.h1 {
+  color: #faf5f5;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem 20px;
+}
+
+/* Imagem principal: centralizada e com tamanho fixo */
+.destaque {
+  padding: 20px;
+}
+.destaque img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Três imagens de baixo: lado a lado, mesmo tamanho */
+.rodape {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+.rodape img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 15px;
+}
+
+/* Celular: imagens de baixo uma embaixo da outra */
+@media (max-width: 600px) {
+  .rodape {
+    grid-template-columns: 1fr;
+  }
+  .destaque img {
+    height: 240px;
+  }
+}
